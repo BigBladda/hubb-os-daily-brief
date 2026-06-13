@@ -24,9 +24,7 @@
 
 | Item | Notes |
 |---|---|
-| Design Telegram message format | What does the message look like? Sketch it out before building |
-| Design n8n workflow structure | Notion query → format → Telegram send |
-| Build n8n Daily Brief workflow | Action Items DB now live — unblocked |
+| Design Notion Daily Brief dashboard | More detailed view: calendar items, Google Tasks, upcoming events, social posts scheduled |
 
 ---
 
@@ -34,8 +32,9 @@
 
 | Item | Notes |
 |---|---|
-| Test and verify | Send test message, confirm format and data accuracy |
-| Schedule at 7am CT | Cron trigger in n8n |
+| Google Tasks integration | Push High priority Action Items to Google Tasks each morning |
+| Calendar items in brief | Pull upcoming events from Google Calendar |
+| Social posts scheduled | Surface scheduled content in morning brief |
 
 ---
 
@@ -45,3 +44,10 @@
 |---|---|
 | Project kickoff | 2026-06-12 |
 | Notion Action Items DB unblocks build | 2026-06-13 |
+| Design Telegram message format | 2026-06-13 |
+| Design n8n workflow structure | 2026-06-13 |
+| Build n8n Daily Brief workflow | 2026-06-13 |
+| Test and verify end-to-end | 2026-06-13 |
+| Schedule at 7am CT | 2026-06-13 |
+| Reduce message noise — High priority + Blocked only | 2026-06-13 |
+| Add project hyperlinks to Telegram message | 2026-06-13 |
