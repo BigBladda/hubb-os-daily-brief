@@ -21,7 +21,7 @@ Daily Brief is a 7am Telegram message delivering the current next actions and bl
 
 ## Deliverable
 
-n8n workflow (ID: wJQbhYfr2Bb7FFEw) running on schedule at 7am CT daily, sending a formatted Telegram message to HubbOSBot. Shows High priority Ready items (⚡) and all Blocked items (🚫) grouped by project. Project headers are tappable links to Notion. Data source: Notion Action Items DB.
+n8n workflow (ID: wJQbhYfr2Bb7FFEw) running on schedule at 7am CT daily, sending a formatted Telegram message to HubbOSBot. Shows High priority Ready items (⚡) and all Blocked items (🚫) grouped by project. Project headers are tappable links to Notion. Data source: Notion Tasks DB.
 
 ---
 
@@ -29,14 +29,14 @@ n8n workflow (ID: wJQbhYfr2Bb7FFEw) running on schedule at 7am CT daily, sending
 
 | Layer | Tool | Job |
 |---|---|---|
-| Data | Notion Action Items DB (ID: 2eef09b2-ee02-4f4d-9814-ac0eda0448d3) | Source of next actions and blockers |
+| Data | Notion Tasks DB (ID: 2eef09b2-ee02-4f4d-9814-ac0eda0448d3) | Source of next actions and blockers |
 | Data | Notion Projects DB (ID: 3fca6a5b-1330-475b-880d-97e6935a37e8) | Project name + URL lookup |
 | Automation | n8n on Elestio (workflow: wJQbhYfr2Bb7FFEw) | Scheduled 7am workflow |
 | Delivery | Telegram (HubbOSBot, chat ID: 8687216711) | Push notification to Hubb |
 
 **Workflow structure:**
 - Schedule Trigger (0 13 * * * UTC = 7am CT)
-- HTTP Request → Notion Action Items DB (filter: Ready + Blocked)
+- HTTP Request → Notion Tasks DB (filter: Ready + Blocked)
 - HTTP Request → Notion Projects DB (all, for name/URL lookup)
 - Code node: filter High priority + Blocked, group by project, format HTML message
 - Telegram: send with HTML parse mode
@@ -63,7 +63,7 @@ n8n workflow (ID: wJQbhYfr2Bb7FFEw) running on schedule at 7am CT daily, sending
 See DECISIONS.md for full log. Locked decisions:
 
 - Telegram at 7am as primary delivery — push, not pull
-- Notion Action Items DB as data source — not OPEN_LOOPS.md
+- Notion Tasks DB as data source — not OPEN_LOOPS.md
 - Brief shows High priority Ready + all Blocked only — Normal Ready items excluded (noise)
 - Project headers are tappable HTML links to Notion project record
 - v1 is Telegram only — Notion dashboard is Phase 2
