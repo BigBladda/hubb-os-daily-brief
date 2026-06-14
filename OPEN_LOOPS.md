@@ -32,7 +32,7 @@
 
 | Item | Notes |
 |---|---|
-| Google Tasks integration | Push High priority Action Items to Google Tasks each morning |
+| Google Tasks integration | Push High priority Tasks to Google Tasks each morning |
 | Calendar items in brief | Pull upcoming events from Google Calendar |
 | Social posts scheduled | Surface scheduled content in morning brief |
 
@@ -43,7 +43,7 @@
 | Item | Completed |
 |---|---|
 | Project kickoff | 2026-06-12 |
-| Notion Action Items DB unblocks build | 2026-06-13 |
+| Notion Tasks DB unblocks build | 2026-06-13 |
 | Design Telegram message format | 2026-06-13 |
 | Design n8n workflow structure | 2026-06-13 |
 | Build n8n Daily Brief workflow | 2026-06-13 |
